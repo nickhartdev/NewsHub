@@ -1,10 +1,13 @@
 import React from 'react';
-import { link } from 'react-router-dom';
+import Form from '../Form/Form';
 
 const LanguageSelect = () => {
   return (
-    <h1>Choose a language</h1>
-  )
+    <main>
+      <h1>Choose a language</h1>
+      <Form />
+    </main>
+  );
 }
 
 export default LanguageSelect;
