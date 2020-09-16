@@ -7,10 +7,9 @@ require('dotenv').config();
 function App() {
   return (
     <div className="App">
-      <Route 
-        path="/language-select" 
-        component={<LanguageSelect />}
-      />
+      <Route path="/language-select">
+        <LanguageSelect />
+      </Route>
     </div>
   );
 }
