@@ -1,25 +1,25 @@
-import React, { useEffect } from 'react';
-import { Trans, useTranslation } from 'react-i18next';
+import React, { useEffect, useState } from 'react';
 
 const LanguageHeader = () => {
-  const [t, i18n] = useTranslation();
-  const languages = ['en', 'es'];
+  let [greeting, setGreeting] = useState();
+  const greetings = ['Choose a language', 'Elige tu idioma'];
 
   useEffect(() => {
-    let counter = 0;
+    let counter = 1;
+    setGreeting(greetings[0]);
     setInterval(() => {
-      i18n.changeLanguage(languages[counter]);
+      setGreeting(greeting = greetings[counter]);
 
       counter++;
 
-      if (counter > languages.length - 1) {
+      if (counter > greetings.length - 1) {
         counter = 0;
       }
     }, 10000);
   }, [])
 
   return (
-    <Trans i18nKey="title" />
+    <h1>{ greeting }</h1>
   )
 }
 
