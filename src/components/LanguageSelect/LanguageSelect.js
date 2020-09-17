@@ -1,5 +1,7 @@
 import React from 'react';
+import { Trans, useTranslation } from 'react-i18next';
 import Form from '../Form/Form';
+import LanguageHeader from './LanguageHeader/LanguageHeader';
 
 const LanguageSelect = () => {
   const languages = [
@@ -18,9 +20,11 @@ const LanguageSelect = () => {
     "中文"
   ];
 
+
+
   return (
     <main>
-      <h1>Choose a language</h1>
+      <LanguageHeader />
       <Form options={ languages }/>
     </main>
   );
