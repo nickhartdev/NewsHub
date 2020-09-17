@@ -20,7 +20,7 @@ const App = () => {
         <LanguageSelect changeLanguage={ changeLanguage } />
       </Route>
       <Route path="/interest-select">
-        <InterestSelect />
+        <InterestSelect modifyInterests={ modifyInterests }/>
       </Route>
     </div>
   )
