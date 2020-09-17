@@ -3,7 +3,12 @@ import Option from './Option/Option';
 
 const Form = ({ options }) => {
   const optionsToSelect = options.map(option => {
-    return <Option optionToDisplay={ option } />
+    return (
+      <Option 
+        optionToDisplay={ option } 
+        key={ options.indexOf(option) }
+      />
+    )
   })
 
   return (
