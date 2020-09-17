@@ -4,13 +4,15 @@ import { render, screen } from '@testing-library/react';
 import Form from './Form';
 
 describe('Form', () => {
-  it('should render a header', () => {
+  it('should render the options that are passed in', () => {
     render(
-      <Form />
+      <Form options={['Option 1', 'Option 2']} />
     )
 
-    const header = screen.getByText('Form');
+    const option1 = screen.getByText('Option 1')
+    const option2 = screen.getByText('Option 2')
 
-    expect(header).toBeInTheDocument();
+    expect(option1).toBeInTheDocument();
+    expect(option2).toBeInTheDocument();
   })
 })

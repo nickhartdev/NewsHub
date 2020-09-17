@@ -8,7 +8,6 @@ const Form = ({ options }) => {
 
   return (
     <section className="form">
-      <h2>Form</h2>
       { optionsToSelect }
     </section>
   );
