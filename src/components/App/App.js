@@ -11,6 +11,10 @@ class App extends Component {
     this.state = {}
   }
 
+  setLanguage = (language) => {
+    this.setState({ language: language })
+  }
+
   render() {
     return (
       <div className="App">

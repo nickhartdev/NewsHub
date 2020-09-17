@@ -4,19 +4,19 @@ import LanguageHeader from './LanguageHeader/LanguageHeader';
 
 const LanguageSelect = () => {
   const languages = [
-    "العربية",
-    "Deutsch",
+    // "العربية",
+    // "Deutsch",
     "English",
     "Español",
-    "Français",
-    "עברית",
-    "Italiano",
-    "Nederlands",
-    "Norsk",
-    "Português",
-    "русский",
-    "Davvisámegiella",
-    "中文"
+    // "Français",
+    // "עברית",
+    // "Italiano",
+    // "Nederlands",
+    // "Norsk",
+    // "Português",
+    // "русский",
+    // "Davvisámegiella",
+    // "中文"
   ];
 
   return (
