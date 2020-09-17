@@ -6,6 +6,10 @@ import InterestSelect from '../InterestSelect/InterestSelect';
 require('dotenv').config();
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {}
+  }
 
   render() {
     return (
