@@ -24,7 +24,7 @@ const LanguageSelect = ({ setLanguage }) => {
       <LanguageHeader />
       <Form 
         options={ languages }
-        functionality={ setLanguage }
+        functionToCall={ setLanguage }
       />
     </main>
   );

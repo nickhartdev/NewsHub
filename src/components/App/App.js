@@ -3,6 +3,7 @@ import { Route } from 'react-router-dom';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import InterestSelect from '../InterestSelect/InterestSelect';
 import './App.css';
+import '../../i18n';
 require('dotenv').config();
 
 class App extends Component {
@@ -14,8 +15,8 @@ class App extends Component {
     }
   }
 
-  setLanguage = (language) => {
-    this.setState({ language: language })
+  setLanguage = e => {
+    this.setState({ language: e.target.innerText })
   }
 
   render() {

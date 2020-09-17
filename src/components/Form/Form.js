@@ -1,11 +1,12 @@
 import React from 'react';
 import Option from './Option/Option';
 
-const Form = ({ options }) => {
+const Form = ({ options, functionToCall }) => {
   const optionsToSelect = options.map(option => {
     return (
       <Option 
         optionToDisplay={ option } 
+        functionToCall={ functionToCall }
         key={ options.indexOf(option) }
       />
     )

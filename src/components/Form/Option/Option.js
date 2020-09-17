@@ -1,8 +1,8 @@
 import React from 'react';
 
-const Option = ({ optionToDisplay, functionality }) => {
+const Option = ({ optionToDisplay, functionToCall }) => {
   return (
-    <button type="button" onClick={functionality}>
+    <button type="button" onClick={functionToCall}>
       {optionToDisplay}
     </button>
   )
