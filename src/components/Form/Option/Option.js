@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Option = ({ optionToDisplay }) => {
-  return <p>{ optionToDisplay }</p>
+  return <button type="button">{ optionToDisplay }</button>
 }
 
 export default Option;
