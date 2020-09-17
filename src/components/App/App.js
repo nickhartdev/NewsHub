@@ -1,39 +1,29 @@
-import React, { Component } from 'react';
+import React, { useState } from 'react';
 import { Route } from 'react-router-dom';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import InterestSelect from '../InterestSelect/InterestSelect';
 import './App.css';
-import '../../i18n';
+import { useTranslation } from 'react-i18next';
 require('dotenv').config();
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      language: '',
-      interests: []
-    }
+const App = () => {
+  const [interests, modifyInterests] = useState();
+  const [t, i18n] = useTranslation();
+
+  const changeLanguage = e => {
+    i18n.changeLanguage(e.target.innerText.slice(0, 2).toLowerCase());
   }
 
-  setLanguage = e => {
-    const language = e.target.innerText.slice(0, 2).toLowerCase();
-    this.setState({ language })
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <Route path="/language-select">
-          <LanguageSelect 
-            setLanguage={ this.setLanguage }
-          />
-        </Route>
-        <Route path="/interest-select">
-          <InterestSelect />
-        </Route>
-      </div>
-    )
-  };
+  return (
+    <div className="App">
+      <Route path="/language-select">
+        <LanguageSelect changeLanguage={ changeLanguage } />
+      </Route>
+      <Route path="/interest-select">
+        <InterestSelect />
+      </Route>
+    </div>
+  )
 }
 
 export default App;
