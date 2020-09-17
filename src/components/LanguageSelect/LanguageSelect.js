@@ -1,5 +1,4 @@
 import React from 'react';
-import { Trans, useTranslation } from 'react-i18next';
 import Form from '../Form/Form';
 import LanguageHeader from './LanguageHeader/LanguageHeader';
 
@@ -19,8 +18,6 @@ const LanguageSelect = () => {
     "Davvisámegiella",
     "中文"
   ];
-
-
 
   return (
     <main>
