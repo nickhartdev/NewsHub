@@ -16,7 +16,8 @@ class App extends Component {
   }
 
   setLanguage = e => {
-    this.setState({ language: e.target.innerText })
+    const language = e.target.innerText.slice(0, 2).toLowerCase();
+    this.setState({ language })
   }
 
   render() {
