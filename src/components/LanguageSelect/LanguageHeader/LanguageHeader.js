@@ -15,6 +15,7 @@ const LanguageHeader = () => {
       if (counter > greetings.length - 1) {
         counter = 0;
       }
+
     }, 10000);
   }, [])
 
