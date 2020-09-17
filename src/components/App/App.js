@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import './App.css';
 import { Route } from 'react-router-dom';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import InterestSelect from '../InterestSelect/InterestSelect';
+import './App.css';
 require('dotenv').config();
 
 class App extends Component {
