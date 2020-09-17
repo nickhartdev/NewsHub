@@ -2,7 +2,7 @@ import React from 'react';
 import Form from '../Form/Form';
 import LanguageHeader from './LanguageHeader/LanguageHeader';
 
-const LanguageSelect = () => {
+const LanguageSelect = ({ setLanguage }) => {
   const languages = [
     // "العربية",
     // "Deutsch",
@@ -22,7 +22,10 @@ const LanguageSelect = () => {
   return (
     <main>
       <LanguageHeader />
-      <Form options={ languages }/>
+      <Form 
+        options={ languages }
+        functionality={ setLanguage }
+      />
     </main>
   );
 }

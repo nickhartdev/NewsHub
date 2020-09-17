@@ -8,7 +8,10 @@ require('dotenv').config();
 class App extends Component {
   constructor() {
     super();
-    this.state = {}
+    this.state = {
+      language: '',
+      interests: []
+    }
   }
 
   setLanguage = (language) => {
@@ -19,7 +22,9 @@ class App extends Component {
     return (
       <div className="App">
         <Route path="/language-select">
-          <LanguageSelect />
+          <LanguageSelect 
+            setLanguage={ this.setLanguage }
+          />
         </Route>
         <Route path="/interest-select">
           <InterestSelect />
