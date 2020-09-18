@@ -1,0 +1,11 @@
+{
+  "interestHeader": "Elige tus intereses",
+  "interests": {
+    "business": "Los negocios",
+    "entertainment": "La Entretenimiento",
+    "health": "La Salud",
+    "science": "La Ciencia",
+    "sports": "Los Deportes",
+    "technology": "La Tecnología"
+  }
+}

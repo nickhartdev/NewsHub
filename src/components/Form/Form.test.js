@@ -1,13 +1,16 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import Form from './Form';
+import '../../i18n';
 
 describe('Form', () => {
   it('should render the options that are passed in', () => {
     render(
-      <Form options={['Option 1', 'Option 2']} />
-    )
+      <Router>
+        <Form options={["Option 1", "Option 2"]} />
+      </Router>
+    );
 
     const option1 = screen.getByText('Option 1')
     const option2 = screen.getByText('Option 2')

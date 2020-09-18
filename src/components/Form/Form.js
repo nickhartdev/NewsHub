@@ -1,11 +1,14 @@
 import React from 'react';
 import Option from './Option/Option';
+import SubmitButton from './SubmitButton/SubmitButton';
 
-const Form = ({ options }) => {
+const Form = ({ options, functionToCall }) => {
   const optionsToSelect = options.map(option => {
     return (
       <Option 
+        options={ options }
         optionToDisplay={ option } 
+        functionToCall={ functionToCall }
         key={ options.indexOf(option) }
       />
     )
@@ -14,6 +17,7 @@ const Form = ({ options }) => {
   return (
     <section className="form">
       { optionsToSelect }
+      <SubmitButton options={ options }/>
     </section>
   );
 }

@@ -1,0 +1,11 @@
+{
+  "interestHeader": "Choose your interests",
+  "interests": {
+    "business": "Business",
+    "entertainment": "Entertainment",
+    "health": "Health",
+    "science": "Science",
+    "sports": "Sports",
+    "technology": "Technology"
+  }
+}
