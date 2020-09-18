@@ -6,8 +6,10 @@ import LanguageSelect from './LanguageSelect'
 describe('LanguageSelect', () => {
   it('should render a header', () => {
     render(
-      <LanguageSelect />
-    )
+      <Router>
+        <LanguageSelect />
+      </Router>
+    );
 
     const header = screen.getByText('Choose a language');
 
