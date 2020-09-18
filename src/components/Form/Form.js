@@ -17,7 +17,7 @@ const Form = ({ options, functionToCall }) => {
   return (
     <section className="form">
       { optionsToSelect }
-      <SubmitButton />
+      <SubmitButton options={ options }/>
     </section>
   );
 }
