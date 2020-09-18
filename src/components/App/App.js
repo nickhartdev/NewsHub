@@ -18,13 +18,11 @@ const App = () => {
     const interest = e.target.innerText.toLowerCase();
     
     if (interests.includes(interest)) {
-      const newInterests = interests.filter(interestToCheck => {
-        return interestToCheck !== interest
-      })
-      
-      modifyInterests(newInterests);
+      modifyInterests(interests.filter(interestToKeep => {
+        return interestToKeep !== interest;
+      }))
     } else if (!interests.includes(interest)) {
-      modifyInterests(interests.concat(interest));
+      modifyInterests([...interests, interest]);
     }
   }
 
