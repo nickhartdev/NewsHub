@@ -1,9 +1,10 @@
 import React, { useState, Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Route } from 'react-router-dom';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import InterestSelect from '../InterestSelect/InterestSelect';
+import Home from '../Home/Home';
 import './App.css';
-import { useTranslation } from 'react-i18next';
 require('dotenv').config();
 
 const App = () => {
@@ -66,6 +67,9 @@ const App = () => {
             toggleInterest={toggleInterest} 
             interests={ englishCategories }
           />
+        </Route>
+        <Route path="/home">
+          <Home />
         </Route>
       </Suspense>
     </div>
