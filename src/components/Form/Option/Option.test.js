@@ -7,11 +7,15 @@ describe('Option', () => {
   it('should render the text that is passed in', () => {
     render(
       <Router>
-        <Option optionToDisplay="Test" options={[]} />
+        <Option 
+          optionToDisplay="Test" 
+          options={[]} 
+          i18nKey="interest.business"
+        />
       </Router>
     );
 
-    const option = screen.getByText('Test');
+    const option = screen.getByText('Business');
 
     expect(option).toBeInTheDocument();
   })

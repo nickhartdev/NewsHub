@@ -8,14 +8,22 @@ require('dotenv').config();
 
 const App = () => {
   const [interests, modifyInterests] = useState([]);
-  const [t, i18n] = useTranslation('en');
+  const [t, i18n] = useTranslation();
+  const englishCategories = [
+    'Business',
+    'Entertainment',
+    'Health',
+    'Science',
+    'Sports',
+    'Technology'
+  ]
 
   const changeLanguage = e => {
     i18n.changeLanguage(e.target.innerText.slice(0, 2).toLowerCase());
   }
 
   const toggleInterest = e => {
-    const interest = e.target.innerText.toLowerCase();
+    const interest = translateInterest(e.target.innerText);
     
     if (interests.includes(interest)) {
       modifyInterests(interests.filter(interestToKeep => {
@@ -23,6 +31,33 @@ const App = () => {
       }))
     } else if (!interests.includes(interest)) {
       modifyInterests([...interests, interest]);
+    }
+  }
+
+  const translateInterest = interest => {
+    if (englishCategories.includes(interest)) {
+      return interest;
+    } else {
+      switch (interest) {
+        case 'Los negocios':
+          return 'business';
+          break;
+        case 'La Entretenimiento':
+          return 'entertainment';
+          break;
+        case 'La Salud':
+          return 'health';
+          break;
+        case 'La Ciencia':
+          return 'science';
+          break;
+        case 'Los Deportes':
+          return 'sports';
+          break;
+        case 'La Tecnologia':
+          return 'technology';
+          break;
+      }
     }
   }
 

@@ -1,9 +1,9 @@
 import React from 'react';
 import { Trans } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import '../../../i18n'
 
 const Option = ({ optionToDisplay, functionToCall, options }) => {
+
   const createKey = optionToDisplay => {
     if (options.includes('business') || options.includes('los negocios')) {
       return `interests.${optionToDisplay}`;
