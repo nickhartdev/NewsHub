@@ -7,16 +7,16 @@ const LanguageHeader = () => {
   useEffect(() => {
     let counter = 1;
     setGreeting(greetings[0]);
-    setInterval(() => {
+    
+    const intervalId = setInterval(() => {
       setGreeting(greeting = greetings[counter]);
-
       counter++;
-
       if (counter > greetings.length - 1) {
         counter = 0;
       }
-
     }, 10000);
+
+    return clearInterval(intervalId);
   }, [])
 
   return (
