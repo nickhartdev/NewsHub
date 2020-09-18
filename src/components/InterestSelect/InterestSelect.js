@@ -1,5 +1,6 @@
 import React from "react";
 import Form from "../Form/Form";
+import { useTranslation } from 'react-i18next';
 
 const InterestSelect = ({ toggleInterest }) => {
   const interests = [

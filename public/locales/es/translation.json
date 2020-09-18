@@ -1,3 +1,10 @@
 {
-  "title": "bienvenidos!"
+  "interests": {
+    "Business": "Los negocios",
+    "Entertainment": "La Entretenimiento",
+    "Health": "La Salud",
+    "Science": "La Ciencia",
+    "Sports": "Los Deportes",
+    "Technology": "La Tecnología"
+  }
 }
