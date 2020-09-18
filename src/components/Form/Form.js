@@ -5,7 +5,7 @@ const Form = ({ options, functionToCall }) => {
   const optionsToSelect = options.map(option => {
     return (
       <Option 
-        options = { options }
+        options={ options }
         optionToDisplay={ option } 
         functionToCall={ functionToCall }
         key={ options.indexOf(option) }
