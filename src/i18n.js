@@ -22,7 +22,7 @@ i18n
     interpolation: {
       escapeValue: false,
     },
-    resources,
+    resources
   });
 
 export default i18n;

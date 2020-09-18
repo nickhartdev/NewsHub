@@ -16,6 +16,7 @@ const Form = ({ options, functionToCall }) => {
   return (
     <section className="form">
       { optionsToSelect }
+      <button>➡</button>
     </section>
   );
 }

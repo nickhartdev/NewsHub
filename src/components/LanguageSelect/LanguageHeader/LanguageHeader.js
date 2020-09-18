@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 const LanguageHeader = () => {
   let [greeting, setGreeting] = useState();
-  const greetings = ['Choose a language', 'Elige tu idioma'];
+  const greetings = ['Choose your language(s)', 'Elige tu idioma(s)'];
 
   useEffect(() => {
     let counter = 1;
