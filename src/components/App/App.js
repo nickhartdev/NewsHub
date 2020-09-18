@@ -5,7 +5,6 @@ import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import InterestSelect from '../InterestSelect/InterestSelect';
 import Home from '../Home/Home';
 import './App.css';
-require('dotenv').config();
 
 const App = () => {
   const [interests, modifyInterests] = useState([]);
