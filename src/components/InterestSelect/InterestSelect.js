@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "../Form/Form";
 
-const InterestSelect = ({ modifyInterests }) => {
+const InterestSelect = ({ toggleInterest }) => {
   const interests = [
     "General",
     "Business",
@@ -17,7 +17,7 @@ const InterestSelect = ({ modifyInterests }) => {
       <h1>Choose your interests</h1>
       <Form 
         options={ interests } 
-        functionToCall={ modifyInterests }
+        functionToCall={ toggleInterest }
       />
     </main>
   );
