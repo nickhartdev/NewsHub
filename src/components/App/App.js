@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, Suspense } from 'react';
 import { Route } from 'react-router-dom';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import InterestSelect from '../InterestSelect/InterestSelect';
@@ -28,14 +28,16 @@ const App = () => {
 
   return (
     <div className="App">
-      <Route path="/language-select">
-        <LanguageSelect changeLanguage={ changeLanguage } />
-      </Route>
-      <Route path="/interest-select">
-        <InterestSelect toggleInterest={ toggleInterest }/>
-      </Route>
+      <Suspense fallback={<div>Loading...</div>}>
+        <Route path="/language-select">
+          <LanguageSelect changeLanguage={changeLanguage} />
+        </Route>
+        <Route path="/interest-select">
+          <InterestSelect toggleInterest={toggleInterest} />
+        </Route>
+      </Suspense>
     </div>
-  )
+  );
 }
 
 export default App;
