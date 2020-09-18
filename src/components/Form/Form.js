@@ -1,5 +1,6 @@
 import React from 'react';
 import Option from './Option/Option';
+import SubmitButton from './SubmitButton/SubmitButton';
 
 const Form = ({ options, functionToCall }) => {
   const optionsToSelect = options.map(option => {
@@ -16,7 +17,7 @@ const Form = ({ options, functionToCall }) => {
   return (
     <section className="form">
       { optionsToSelect }
-      <button>➡</button>
+      <SubmitButton />
     </section>
   );
 }
