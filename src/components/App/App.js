@@ -10,12 +10,12 @@ const App = () => {
   const [interests, modifyInterests] = useState([]);
   const [t, i18n] = useTranslation();
   const englishCategories = [
-    'Business',
-    'Entertainment',
-    'Health',
-    'Science',
-    'Sports',
-    'Technology'
+    'business',
+    'entertainment',
+    'health',
+    'science',
+    'sports',
+    'technology'
   ]
 
   const changeLanguage = e => {
@@ -23,7 +23,7 @@ const App = () => {
   }
 
   const toggleInterest = e => {
-    const interest = translateInterest(e.target.innerText);
+    const interest = translateInterest(e.target.innerText.toLowerCase());
     
     if (interests.includes(interest)) {
       modifyInterests(interests.filter(interestToKeep => {
@@ -39,24 +39,18 @@ const App = () => {
       return interest;
     } else {
       switch (interest) {
-        case 'Los negocios':
+        case 'los negocios':
           return 'business';
-          break;
-        case 'La Entretenimiento':
+        case 'la entretenimiento':
           return 'entertainment';
-          break;
-        case 'La Salud':
+        case 'la salud':
           return 'health';
-          break;
-        case 'La Ciencia':
+        case 'la ciencia':
           return 'science';
-          break;
-        case 'Los Deportes':
+        case 'los deportes':
           return 'sports';
-          break;
-        case 'La Tecnologia':
+        case 'la tecnologia':
           return 'technology';
-          break;
       }
     }
   }

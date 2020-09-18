@@ -4,7 +4,6 @@ import '../../../i18n';
 
 const SubmitButton = ({ options }) => {
   const createRoute = () => {
-    console.log(options)
     if (options.includes("English") || options.includes("Español")) {
       return "/interest-select";
     } else {
