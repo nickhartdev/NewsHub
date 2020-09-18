@@ -1,8 +1,10 @@
 import React from "react";
-import { Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import Form from "../Form/Form";
+import '../../i18n';
 
 const InterestSelect = ({ toggleInterest }) => {
+  const { t } = useTranslation();
   const interests = [
     "business",
     "entertainment",
@@ -14,7 +16,7 @@ const InterestSelect = ({ toggleInterest }) => {
 
   return (
     <main>
-      <Trans i18nKey="interestHeader" />
+      <h1>{t('interestHeader')}</h1>
       <Form 
         options={ interests } 
         functionToCall={ toggleInterest }

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { screen, render } from '@testing-library/react';
 import InterestSelect from './InterestSelect';
@@ -6,10 +6,12 @@ import InterestSelect from './InterestSelect';
 describe('InterestSelect', () => {
   it('should render 6 buttons and a header', () => {
     render(
-      <Router>
-        <InterestSelect />
-      </Router>
-    )
+      <Suspense>
+        <Router>
+          <InterestSelect />
+        </Router>
+      </Suspense>
+    );
 
     const header = screen.getByText('Choose your interests');
     const buttons = screen.getAllByRole('button');
