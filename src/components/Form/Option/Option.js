@@ -1,19 +1,31 @@
 import React from 'react';
 import { Trans } from 'react-i18next';
+import { Link } from 'react-router-dom';
 import '../../../i18n'
 
-const Option = ({ optionToDisplay, functionToCall }) => {
-  if (optionToDisplay === 'English' || optionToDisplay === 'Español') {
-    return (
-      <button type="button" onClick={functionToCall}>
-        {optionToDisplay}
-      </button>
-    );
+const Option = ({ optionToDisplay, functionToCall, options }) => {
+  const createKey = optionToDisplay => {
+    if (options.includes('business') || options.includes('los negocios')) {
+      return `interests.${optionToDisplay}`;
+    } else {
+      return optionToDisplay;
+    }
   }
+
+  const createRoute = () => {
+    if (options.includes('English') || options.includes('Español')) {
+      return '/interest-select'
+    } else {
+      return '/home'
+    }
+  }
+
   return (
-    <button type="button" onClick={functionToCall}>
-      <Trans i18nKey={`interests.${optionToDisplay}`} />
-    </button>
+    <Link to={createRoute()}>
+      <button type="button" onClick={functionToCall}>
+        <Trans i18nKey={createKey(optionToDisplay)} />
+      </button>
+    </Link>
   )
 }
 
