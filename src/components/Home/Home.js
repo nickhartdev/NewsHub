@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import '../../i18n';
 import Articles from './Articles/Articles';
-import { fetchTopStoriesByLanguage } from '../../ApiHelper';
+import { fetchTopStoriesByLanguage, fetchStoriesByInterest } from '../../ApiHelper';
 
 const Home = ({ interests }) => {
   const [articles, setArticles] = useState([]);
@@ -14,7 +14,8 @@ const Home = ({ interests }) => {
   }
 
   const getArticlesByInterest = async () => {
-
+    const response = await fetchStoriesByInterest(interests)
+    setArticles(response.articles);
   }
 
   useEffect(() => {
