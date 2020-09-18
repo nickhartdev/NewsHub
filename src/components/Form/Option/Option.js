@@ -1,8 +1,9 @@
 import React from 'react';
-import { Trans } from 'react-i18next';
+import { Trans, useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 
 const Option = ({ optionToDisplay, functionToCall, options }) => {
+  const { t, i18n } = useTranslation();
 
   const createKey = optionToDisplay => {
     if (options.includes('business') || options.includes('los negocios')) {
@@ -23,7 +24,7 @@ const Option = ({ optionToDisplay, functionToCall, options }) => {
   return (
     <Link to={createRoute()}>
       <button type="button" onClick={functionToCall}>
-        <Trans i18nKey={createKey(optionToDisplay)} />
+        {t(createKey(optionToDisplay))}
       </button>
     </Link>
   )

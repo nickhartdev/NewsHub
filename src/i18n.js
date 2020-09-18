@@ -3,42 +3,29 @@ import Backend from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 import { initReactI18next } from 'react-i18next';
 
-// .use(Backend)
-// .use(LanguageDetector)
+import translationEN from "./locales/en/translationEN.json";
+import translationES from './locales/es/translationES.json';
 
-i18n.use(initReactI18next).init({
-  fallbackLng: "en",
-  debug: true,
-  interpolation: {
-    escapeValue: false,
+const resources = {
+  en: {
+    translation: translationEN
   },
-  resources: {
-    en: {
-      namespace1: {
-        interestHeader: "Choose your interests",
-        interests: {
-          business: "Business",
-          entertainment: "Entertainment",
-          health: "Health",
-          science: "Science",
-          sports: "Sports",
-          technology: "Technology",
-        },
-      },
+  es: {
+    translation: translationES
+  }
+}
+
+i18n
+  .use(initReactI18next)
+  .use(LanguageDetector)
+  .init({
+    fallbackLng: "en",
+    debug: true,
+    interpolation: {
+      escapeValue: false,
     },
-    es: {
-      interestHeader: "Elige tus intereses",
-      interests: {
-        business: "Los negocios",
-        entertainment: "La Entretenimiento",
-        health: "La Salud",
-        science: "La Ciencia",
-        sports: "Los Deportes",
-        technology: "La Tecnología",
-      },
-    },
-  },
-});
+    resources,
+  });
 
 export default i18n;
 
