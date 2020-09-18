@@ -8,7 +8,7 @@ require('dotenv').config();
 
 const App = () => {
   const [interests, modifyInterests] = useState([]);
-  const [t, i18n] = useTranslation();
+  const [t, i18n] = useTranslation('en');
 
   const changeLanguage = e => {
     i18n.changeLanguage(e.target.innerText.slice(0, 2).toLowerCase());

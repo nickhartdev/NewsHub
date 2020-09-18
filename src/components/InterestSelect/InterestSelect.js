@@ -1,4 +1,5 @@
 import React from "react";
+import { Trans } from "react-i18next";
 import Form from "../Form/Form";
 
 const InterestSelect = ({ toggleInterest }) => {
@@ -13,7 +14,7 @@ const InterestSelect = ({ toggleInterest }) => {
 
   return (
     <main>
-      <h1>Choose your interests</h1>
+      <Trans i18nKey="interestHeader" />
       <Form 
         options={ interests } 
         functionToCall={ toggleInterest }
