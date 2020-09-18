@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import { render, screen } from '@testing-library/react';
 import Form from './Form';
+import '../../i18n';
 
 describe('Form', () => {
   it('should render the options that are passed in', () => {
