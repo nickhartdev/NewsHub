@@ -69,7 +69,7 @@ const App = () => {
           />
         </Route>
         <Route path="/home">
-          <Home />
+          <Home interests={ interests } />
         </Route>
       </Suspense>
     </div>
