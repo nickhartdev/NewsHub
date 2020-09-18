@@ -6,7 +6,7 @@ describe('LanguageHeader', () => {
   it('should display a header', () => {
     render(<LanguageHeader />)
 
-    const header = screen.getByText('Choose a language');
+    const header = screen.getByText('Choose your language');
     
     expect(header).toBeInTheDocument();
   })

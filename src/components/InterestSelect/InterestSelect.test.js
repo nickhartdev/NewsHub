@@ -4,7 +4,7 @@ import { screen, render } from '@testing-library/react';
 import InterestSelect from './InterestSelect';
 
 describe('InterestSelect', () => {
-  it('should render 6 buttons and a header', () => {
+  it('should render 7 buttons and a header', () => {
     render(
       <Suspense>
         <Router>
@@ -17,6 +17,6 @@ describe('InterestSelect', () => {
     const buttons = screen.getAllByRole('button');
 
     expect(header).toBeInTheDocument();
-    expect(buttons.length).toBe(6);
+    expect(buttons.length).toBe(7);
   })
 })
