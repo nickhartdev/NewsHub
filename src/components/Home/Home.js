@@ -4,23 +4,25 @@ import '../../i18n';
 import Articles from './Articles/Articles';
 import { fetchTopHeadlinesByLanguage } from '../../ApiHelper';
 
-const Home = () => {
+const Home = ({ interests }) => {
   const [articles, setArticles] = useState([]);
   const {t, i18n} = useTranslation();
 
-  useEffect(() => {
-    async function getArticles() {
-      const articlesToDisplay = await fetchTopHeadlinesByLanguage(i18n.language);
-      setArticles(articlesToDisplay.articles);
-    }
+  const getAllArticles = async () => {
+    const articlesToDisplay = await fetchTopHeadlinesByLanguage(i18n.language);
+    setArticles(articlesToDisplay.articles);
+  }
 
-    getArticles();
+  useEffect(() => {
+    if (interests.length === 0) {
+      // getAllArticles();
+    }
   }, []);
 
   return (
     <main>
       <h1>Home</h1>
-      <Articles />
+      <Articles articles={ articles } />
     </main>
   );
 }
