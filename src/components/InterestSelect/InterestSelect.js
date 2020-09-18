@@ -1,16 +1,14 @@
 import React from "react";
 import Form from "../Form/Form";
-import { useTranslation } from 'react-i18next';
 
 const InterestSelect = ({ toggleInterest }) => {
   const interests = [
-    "General",
-    "Business",
-    "Entertainment",
-    "Health",
-    "Science",
-    "Sports",
-    "Technology"
+    "business",
+    "entertainment",
+    "health",
+    "science",
+    "sports",
+    "technology"
   ];
 
   return (

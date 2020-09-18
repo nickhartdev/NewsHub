@@ -1,10 +1,10 @@
 {
   "interests": {
-    "Business": "Business",
-    "Entertainment": "Entertainment",
-    "Health": "Health",
-    "Science": "Science",
-    "Sports": "Sports",
-    "Technology": "Technology"
+    "business": "Business",
+    "entertainment": "Entertainment",
+    "health": "Health",
+    "science": "Science",
+    "sports": "Sports",
+    "technology": "Technology"
   }
 }

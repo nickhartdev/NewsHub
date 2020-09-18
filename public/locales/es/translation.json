@@ -1,10 +1,10 @@
 {
   "interests": {
-    "Business": "Los negocios",
-    "Entertainment": "La Entretenimiento",
-    "Health": "La Salud",
-    "Science": "La Ciencia",
-    "Sports": "Los Deportes",
-    "Technology": "La Tecnología"
+    "business": "Los negocios",
+    "entertainment": "La Entretenimiento",
+    "health": "La Salud",
+    "science": "La Ciencia",
+    "sports": "Los Deportes",
+    "technology": "La Tecnología"
   }
 }

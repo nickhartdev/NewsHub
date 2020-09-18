@@ -1,9 +1,11 @@
 import React from 'react';
+import { Trans } from 'react-i18next';
+import '../../../i18n'
 
 const Option = ({ optionToDisplay, functionToCall }) => {
   return (
     <button type="button" onClick={functionToCall}>
-      {optionToDisplay}
+      <Trans i18nKey={`interests.${optionToDisplay}`} />
     </button>
   )
 }
