@@ -62,7 +62,10 @@ const App = () => {
           <LanguageSelect changeLanguage={changeLanguage} />
         </Route>
         <Route path="/interest-select">
-          <InterestSelect toggleInterest={toggleInterest} />
+          <InterestSelect 
+            toggleInterest={toggleInterest} 
+            interests={ englishCategories }
+          />
         </Route>
       </Suspense>
     </div>
