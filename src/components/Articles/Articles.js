@@ -1,5 +1,5 @@
 import React from 'react';
-import '../../../i18n';
+import '../../i18n';
 import Article from './Article/Article';
 
 const Articles = ({ articles, toggleReadingListStatus, readingList }) => {

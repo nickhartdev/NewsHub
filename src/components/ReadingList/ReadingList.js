@@ -1,8 +1,15 @@
 import React from 'react';
+import Article from '../Articles/Article/Article';
 
-const ReadingList = () => {
+const ReadingList = ({ readingList }) => {
+  const articlesToDisplay = readingList.map(article => {
+    return  <Article articleToDisplay={ article } />
+  })
+
   return (
-    <h1>Reading List</h1>
+    <section>
+      { articlesToDisplay }
+    </section>
   )
 }
 
