@@ -49,7 +49,7 @@ const App = () => {
           return 'science';
         case 'los deportes':
           return 'sports';
-        case 'la tecnologia':
+        case 'la tecnología':
           return 'technology';
       }
     }

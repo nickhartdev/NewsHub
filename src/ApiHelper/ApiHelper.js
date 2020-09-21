@@ -39,7 +39,7 @@ export const filterArticlesByLanguage = (languageArticles, interestArticles) => 
 
 export const getArticlesByLanguageAndInterests = async (language, interests) => {
   const languageArticles = await fetchTopArticlesByLanguage(language);
-  const interestArticles = await fetchArticlesByInterest(buildEndpoint(interests));
+  const interestArticles = await fetchArticlesByInterest(interests);
 
   return filterArticlesByLanguage(languageArticles, interestArticles);
 }

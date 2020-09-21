@@ -17,7 +17,7 @@ const Home = ({ interests }) => {
   }
 
   const getArticlesByInterest = async () => {
-    const articles = await getArticlesByLanguageAndInterests(i18n, interests);
+    const articles = await getArticlesByLanguageAndInterests(i18n.language, interests);
     setArticles(articles);
   }
 
