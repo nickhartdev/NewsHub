@@ -37,10 +37,8 @@ const Home = ({ interests }) => {
       const cnnEsArticlesData = await fetchCNNEsArticles();
       articlesData.concat(cnnEsArticlesData);
     }
-
-    console.log(articlesData);
     const shuffledArticles = shuffleArticles(articlesData);
-    console.log(shuffledArticles);
+
     setArticles(shuffledArticles);
   }
 
@@ -51,7 +49,7 @@ const Home = ({ interests }) => {
   return (
     <main>
       <h1>Home</h1>
-      <Articles sources={ articles } />
+      <Articles articles={ articles } />
     </main>
   );
 }
