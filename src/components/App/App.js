@@ -1,13 +1,15 @@
 import React, { useState, Suspense } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Route } from 'react-router-dom';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import InterestSelect from '../InterestSelect/InterestSelect';
+import ReadingList from '../ReadingList/ReadingList';
+import Home from '../Home/Home';
 import './App.css';
-import { useTranslation } from 'react-i18next';
-require('dotenv').config();
 
 const App = () => {
   const [interests, modifyInterests] = useState([]);
+  const [readingList, modifyReadingList] = useState([]);
   const [t, i18n] = useTranslation();
   const englishCategories = [
     'business',
@@ -49,9 +51,21 @@ const App = () => {
           return 'science';
         case 'los deportes':
           return 'sports';
-        case 'la tecnologia':
+        case 'la tecnología':
           return 'technology';
       }
+    }
+  }
+
+  const toggleReadingListStatus = article => {
+    const articleTitles = readingList.map(article => article.title);
+
+    if (!articleTitles.includes(article.title)) {
+      modifyReadingList([...readingList, article]);
+    } else {
+      modifyReadingList(readingList.filter(articleToKeep => {
+        return articleToKeep !== article;
+      }))
     }
   }
 
@@ -59,12 +73,25 @@ const App = () => {
     <div className="App">
       <Suspense fallback={<div>Loading...</div>}>
         <Route path="/language-select">
-          <LanguageSelect changeLanguage={changeLanguage} />
+          <LanguageSelect changeLanguage={ changeLanguage } />
         </Route>
         <Route path="/interest-select">
           <InterestSelect 
-            toggleInterest={toggleInterest} 
+            toggleInterest={ toggleInterest } 
             interests={ englishCategories }
+          />
+        </Route>
+        <Route path="/home">
+          <Home 
+            interests={ interests }
+            readingList={ readingList }
+            toggleReadingListStatus={ toggleReadingListStatus }
+          />
+        </Route>
+        <Route path="/reading-list">
+          <ReadingList 
+            readingList={ readingList } 
+            toggleReadingListStatus={ toggleReadingListStatus }
           />
         </Route>
       </Suspense>
