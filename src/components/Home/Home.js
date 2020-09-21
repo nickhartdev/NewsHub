@@ -42,6 +42,9 @@ const Home = ({ interests, readingList, toggleReadingListStatus }) => {
       <Link to='/reading-list'>
         <button type="button">Go to reading list</button>
       </Link>
+      <Link to='/interest-select'>
+        <button type="button">Choose different interests</button>
+      </Link>
       <Articles 
         articles={ articles } 
         readingList={ readingList }
