@@ -11,16 +11,6 @@ const Home = ({ interests }) => {
   const [articles, setArticles] = useState([]);
   const {t, i18n} = useTranslation();
 
-  const getAllArticles = async () => {
-    const articles = await fetchTopArticlesByLanguage(i18n.language);
-    setArticles(articles);
-  }
-
-  const getArticlesByInterest = async () => {
-    const articles = await getArticlesByLanguageAndInterests(i18n.language, interests);
-    setArticles(articles);
-  }
-
   useEffect(() => {
     if (interests.length === 0) {
       // getAllArticles();
