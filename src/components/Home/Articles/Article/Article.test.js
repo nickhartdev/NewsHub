@@ -5,7 +5,6 @@ import Article from './Article';
 import '../../../../i18n';
 
 describe('Article', () => {
-
   it('should render all correct elements', () => {
     const article = {
       title: "Test title",

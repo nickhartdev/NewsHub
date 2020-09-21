@@ -14,7 +14,6 @@ const Articles = ({ articles }) => {
 
   return (
     <section>
-      <h2>Articles</h2>
       { articlesToDisplay }
     </section>
   );
