@@ -1,4 +1,4 @@
-import { buildEndpoint } from './ApiHelper';
+import { buildEndpoint, filterArticlesByLanguage } from './ApiHelper';
 import apiKey from '../apiKey';
 import '@testing-library/react';
 
