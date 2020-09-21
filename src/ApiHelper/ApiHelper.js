@@ -21,15 +21,15 @@ export const buildEndpoint = (baseUrl, language, interests) => {
   return endpoint.join('');
 }
 
-export const fetchTopArticlesByLanguage = async language => {
+export const fetchTopArticles = async language => {
   const response = await fetch(buildEndpoint(articlesUrl, language));
   const articleData = await response.json();
 
   return articleData.articles;
 }
 
-export const fetchSourcesByLanguage = async language => {
-  const response = await fetch(buildEndpoint(sourcesUrl, language));
+export const fetchSources = async (language, interests) => {
+  const response = await fetch(buildEndpoint(sourcesUrl, language, interests));
   const sourcesData = await response.json();
 
   return sourcesData.sources;
