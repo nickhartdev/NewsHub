@@ -48,7 +48,7 @@ const Home = ({ interests }) => {
 
   return (
     <main>
-      <h1>{t('Your news')}</h1>
+      <h1>{t('home header')}</h1>
       <Articles articles={ articles } />
     </main>
   );

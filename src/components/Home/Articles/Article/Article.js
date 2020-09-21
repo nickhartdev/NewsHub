@@ -10,7 +10,7 @@ const Article = ({ articleToDisplay }) => {
       <p className="title">{articleToDisplay.title}</p>
       <p className="description">{articleToDisplay.description}</p>
       <p className="author">{articleToDisplay.author}</p>
-      <a className="article-link" href={`${articleToDisplay.url}`}>{t('Link to the article')}</a>
+      <a className="article-link" href={`${articleToDisplay.url}`}>{t('article link')}</a>
     </article>
   );
 }
