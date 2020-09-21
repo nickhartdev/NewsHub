@@ -89,7 +89,10 @@ const App = () => {
           />
         </Route>
         <Route path="/reading-list">
-          <ReadingList readingList={ readingList } />
+          <ReadingList 
+            readingList={ readingList } 
+            toggleReadingListStatus={ toggleReadingListStatus }
+          />
         </Route>
       </Suspense>
     </div>
