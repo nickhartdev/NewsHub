@@ -1,10 +1,16 @@
 import React from 'react';
-import '../../../../i18n';
+import { useTranslation } from 'react-i18next';
 
 const Article = ({ articleToDisplay }) => {
+  const { t } = useTranslation();
+
   return (
     <article>
-      <p className="article-title">{articleToDisplay.title}</p>
+      <img src={`${articleToDisplay.urlToImage}`} />
+      <p className="title">{articleToDisplay.title}</p>
+      <p className="description">{articleToDisplay.description}</p>
+      <p className="author">{articleToDisplay.author}</p>
+      <a className="article-link" href={`${articleToDisplay.url}`}>{t('Link to the article')}</a>
     </article>
   );
 }
