@@ -10,5 +10,6 @@
   },
   "home header": "Tus Noticias",
   "article link": "Enlace para ir al artículo",
-  "reading list button": "Agregar a la lista para leer más tarde"
+  "add to list button": "Agregar a la lista para leer más tarde",
+  "remove from list button": "Quitar de la lista"
 }

@@ -1,8 +1,13 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 
-const Article = ({ articleToDisplay }) => {
+const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => {
   const { t } = useTranslation();
+  const readingListTitles = readingList.map(article => article.title);
+  const toggleReadingListText = !readingListTitles.includes(articleToDisplay.title) ? 'add to list button' : 'remove from list button';
+  const callToggleReadingListStatus = () => {
+    toggleReadingListStatus(articleToDisplay)
+  }
 
   return (
     <article>
@@ -11,7 +16,7 @@ const Article = ({ articleToDisplay }) => {
       <p className="description">{articleToDisplay.description}</p>
       <p className="author">{articleToDisplay.author}</p>
       <a className="article-link" href={`${articleToDisplay.url}`}>{t('article link')}</a>
-      <button type="button">{t('reading list button')}</button>
+      <button type="button" onClick={callToggleReadingListStatus}>{t(`${toggleReadingListText}`)}</button>
     </article>
   );
 }

@@ -10,5 +10,6 @@
   },
   "home header": "Your News",
   "article link": "Link to the article",
-  "reading list button": "Add to reading list"
+  "add to list button": "Add to reading list",
+  "remove from list button": "Remove from reading list"
 }

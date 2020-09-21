@@ -4,18 +4,9 @@ import '../../i18n';
 import { fetchArticles, fetchCNNEsArticles } from '../../ApiHelper/ApiHelper';
 import Articles from './Articles/Articles';
 
-const Home = ({ interests }) => {
+const Home = ({ interests, readingList, toggleReadingListStatus }) => {
   const [articles, setArticles] = useState([]);
   const {t, i18n} = useTranslation();
-
-  // const getAllSources = async () => {
-  //   const allSources = await fetchSources(i18n.language);
-  //   setSources(allSources);
-  // }
-
-  // const getSourcesByInterest = async () => {
-  //   const sourcesByInterest = await fetchSources(i18n.language, interests);
-  // }
 
   const shuffleArticles = articles => {
     const shuffledArticles = [];
@@ -49,7 +40,11 @@ const Home = ({ interests }) => {
   return (
     <main>
       <h1>{t('home header')}</h1>
-      <Articles articles={ articles } />
+      <Articles 
+        articles={ articles } 
+        readingList={ readingList }
+        toggleReadingListStatus={ toggleReadingListStatus }
+      />
     </main>
   );
 }

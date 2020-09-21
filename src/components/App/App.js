@@ -58,7 +58,9 @@ const App = () => {
   }
 
   const toggleReadingListStatus = article => {
-    if (!readingList.includes(article)) {
+    const articleTitles = readingList.map(article => article.title);
+
+    if (!articleTitles.includes(article.title)) {
       modifyReadingList([...readingList, article]);
     } else {
       modifyReadingList(readingList.filter(articleToKeep => {
@@ -81,12 +83,13 @@ const App = () => {
         </Route>
         <Route path="/home">
           <Home 
-            interests={ interests } 
+            interests={ interests }
+            readingList={ readingList }
             toggleReadingListStatus={ toggleReadingListStatus }
           />
         </Route>
         <Route path="/reading-list">
-          <ReadingList />
+          <ReadingList readingList={ readingList } />
         </Route>
       </Suspense>
     </div>
