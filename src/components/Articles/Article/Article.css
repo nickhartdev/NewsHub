@@ -1,7 +1,39 @@
 .article {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 80%;
   height: 300px;
   margin: 2em auto 14em auto;
+  position: relative;
+}
+
+.title, .description, .author, .article-link, .article > button {
+  position: absolute;
+  color: white;
+  z-index: 3;
+  margin: 1em;
+}
+
+.title {
+  top: 0;
+}
+
+.description {
+  top: 3em;
+}
+
+.author {
+  top: 6em;
+}
+
+.article-link {
+  top: 9em;
+}
+
+.article > button {
+  top: 15em;
+
 }
 
 .image {
@@ -16,10 +48,11 @@
 .image-overlay {
   position: absolute;
   width: 100%;
+  height: auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, .6);
-  z-index: 10;
+  z-index: 2;
 }
