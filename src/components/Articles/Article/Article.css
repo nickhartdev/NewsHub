@@ -1,0 +1,25 @@
+.article {
+  width: 80%;
+  height: 300px;
+  margin: 2em auto 14em auto;
+}
+
+.image {
+  position: relative;
+}
+
+.image > img {
+  width: 100%;
+  z-index: 1;
+}
+
+.image-overlay {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, .6);
+  z-index: 10;
+}

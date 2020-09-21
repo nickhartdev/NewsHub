@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../../../i18n';
+import './SubmitButton.css';
 
 const SubmitButton = ({ options }) => {
   const createRoute = () => {
@@ -13,7 +14,7 @@ const SubmitButton = ({ options }) => {
 
   return (
     <Link to={createRoute()}>
-      <button>➡</button>
+      <button id="submit-button">➡</button>
     </Link>
   )
 }

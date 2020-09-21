@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import './Article.css'
 
 const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => {
   const { t } = useTranslation();
@@ -10,8 +11,11 @@ const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => 
   }
 
   return (
-    <article>
-      <img src={`${articleToDisplay.urlToImage}`} />
+    <article className="article">
+      <div className="image">
+        <div className="image-overlay"></div>
+        <img src={`${articleToDisplay.urlToImage}`} alt=""/>
+      </div>
       <p className="title">{articleToDisplay.title}</p>
       <p className="description">{articleToDisplay.description}</p>
       <p className="author">{articleToDisplay.author}</p>
