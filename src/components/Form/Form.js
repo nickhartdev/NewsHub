@@ -1,6 +1,7 @@
 import React from 'react';
 import Option from './Option/Option';
 import SubmitButton from './SubmitButton/SubmitButton';
+import './Form.css';
 
 const Form = ({ options, functionToCall }) => {
   const optionsToSelect = options.map(option => {
