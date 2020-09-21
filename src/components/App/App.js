@@ -3,6 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { Route } from 'react-router-dom';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import InterestSelect from '../InterestSelect/InterestSelect';
+import ReadingList from '../ReadingList/ReadingList';
 import Home from '../Home/Home';
 import './App.css';
 
@@ -69,6 +70,9 @@ const App = () => {
         </Route>
         <Route path="/home">
           <Home interests={ interests } />
+        </Route>
+        <Route path="/reading-list">
+          <ReadingList />
         </Route>
       </Suspense>
     </div>
