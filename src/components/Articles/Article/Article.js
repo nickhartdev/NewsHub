@@ -1,6 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import './Article.css'
+import './Article.css';
+import moment from 'moment';
 
 const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => {
   const { t } = useTranslation();
@@ -17,7 +18,9 @@ const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => 
         <img src={`${articleToDisplay.urlToImage}`} alt="" />
       </div>
       <p className="title">{articleToDisplay.title}</p>
-      <p className="author">{articleToDisplay.author}</p>
+      <p className="time-published">
+        {`Published on ${moment(articleToDisplay.publishedAt).format('MM/DD/YYYY')}`}
+      </p>
       <div className="button-container">
         <a className="article-link" href={`${articleToDisplay.url}`}>
           {t("article link")}

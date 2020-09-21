@@ -21,12 +21,12 @@ article {
   text-align: left;
 }
 
-.description {
-  top: 3em;
-}
-
-.author {
-  bottom: 0;
+.time-published {
+  position: absolute;
+  color: white;
+  z-index: 2;
+  top: 12em;
+  margin-left: 1.5em;
 }
 
 .button-container {
@@ -83,7 +83,7 @@ article {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, .6);
+  background: rgba(0, 0, 0, .75);
   z-index: 2;
 }
 
