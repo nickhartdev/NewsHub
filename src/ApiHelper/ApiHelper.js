@@ -1,9 +1,8 @@
-import apiKey from './apiKey';
-import './i18n';
+import apiKey from '../apiKey';
 
-const baseUrl = "http://newsapi.org/v2/top-headlines?";
+const baseUrl = "https://newsapi.org/v2/top-headlines?";
 
-const buildEndpoint = interests => {
+export const buildEndpoint = interests => {
   let endpoint = [baseUrl];
   
   interests.forEach(interest => {
@@ -23,8 +22,9 @@ export const fetchTopStoriesByLanguage = async language => {
 }
 
 export const fetchStoriesByInterest = async interests => {
-  const response = await fetch(buildEndpoint(interests));
-  const articles = await response.json();
+  // const responseByLanguage = await fetch
+  const responseByInterest = await fetch(buildEndpoint(interests));
+  const articles = await responseByInterest.json();
 
   return articles;
 }
