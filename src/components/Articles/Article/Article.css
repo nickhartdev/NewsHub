@@ -3,7 +3,7 @@ article {
   flex-direction: column;
   width: 80%;
   height: 300px;
-  margin: 2em auto;
+  margin: 2em auto 5em auto;
   position: relative;
 }
 
@@ -88,6 +88,9 @@ article {
 }
 
 @media screen and (max-width: 500px) {
+  article {
+    margin: 3em auto;
+  }
   .title {
     font-size: 1.4em;
   }
