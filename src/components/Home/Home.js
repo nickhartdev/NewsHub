@@ -40,10 +40,10 @@ const Home = ({ interests, readingList, toggleReadingListStatus }) => {
     <main>
       <h1>{t('home header')}</h1>
       <Link to='/reading-list'>
-        <button type="button">Go to reading list</button>
+  <button type="button">{t('go to reading list')}</button>
       </Link>
       <Link to='/interest-select'>
-        <button type="button">Choose different interests</button>
+        <button type="button">{t('choose different interests')}</button>
       </Link>
       <Articles 
         articles={ articles } 

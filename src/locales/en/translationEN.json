@@ -10,6 +10,9 @@
   },
   "home header": "Your News",
   "article link": "Link to the article",
-  "add to list button": "Add to reading list",
-  "remove from list button": "Remove from reading list"
+  "add to list": "Add to reading list",
+  "remove from list": "Remove from reading list",
+  "go to reading list": "Go to reading list",
+  "back to home": "Back to home",
+  "choose different interests": "Choose different interests"
 }

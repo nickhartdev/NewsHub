@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => {
   const { t } = useTranslation();
   const readingListTitles = readingList.map(article => article.title);
-  const toggleReadingListText = !readingListTitles.includes(articleToDisplay.title) ? 'add to list button' : 'remove from list button';
+  const toggleReadingListText = !readingListTitles.includes(articleToDisplay.title) ? 'add to list' : 'remove from list';
   const callToggleReadingListStatus = () => {
     toggleReadingListStatus(articleToDisplay)
   }
