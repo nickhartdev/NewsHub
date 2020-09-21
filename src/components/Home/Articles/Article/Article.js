@@ -11,6 +11,7 @@ const Article = ({ articleToDisplay }) => {
       <p className="description">{articleToDisplay.description}</p>
       <p className="author">{articleToDisplay.author}</p>
       <a className="article-link" href={`${articleToDisplay.url}`}>{t('article link')}</a>
+      <button type="button">{t('reading list button')}</button>
     </article>
   );
 }
