@@ -1,14 +1,14 @@
-.article {
+article {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   width: 80%;
   height: 300px;
-  margin: 2em auto 14em auto;
+  margin: 2em auto 2em auto;
   position: relative;
 }
 
-.title, .description, .author, .article-link, .article > button {
+.title, .description, .author {
   position: absolute;
   color: white;
   z-index: 3;
@@ -17,6 +17,9 @@
 
 .title {
   top: 0;
+  font-size: 1.5em;
+  font-weight: bold;
+  text-align: left;
 }
 
 .description {
@@ -29,30 +32,55 @@
 
 .article-link {
   top: 9em;
+  text-decoration: none;
+  background: black;
+  color: white;
+  margin: .5em 0;
+  font-size: .85em;
+  border-radius: 3px;
 }
 
-.article > button {
-  top: 15em;
-
+article > button {
+  margin: auto;
+  width: 100%;
+  max-width: 550px;
+  color: white;
+  background: black;
+  border: none;
+  height: 2em;
+  border-radius: 3px;
 }
 
-.image {
+.image-container {
   position: relative;
 }
 
-.image > img {
+.image-container > img {
   width: 100%;
   z-index: 1;
+  min-height: 250px;
+  max-height: 300px;
+  max-width: 550px;
 }
 
 .image-overlay {
   position: absolute;
   width: 100%;
-  height: auto;
+  height: 100%;
+  min-height: 250px;
+  max-height: 300px;
+  max-width: 550px;
+  margin: auto;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
   background: rgba(0, 0, 0, .6);
   z-index: 2;
+}
+
+@media screen and (max-width: 500px) {
+  .title {
+    font-size: 1.4em;
+  }
 }
