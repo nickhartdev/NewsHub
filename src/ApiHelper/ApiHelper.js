@@ -1,13 +1,16 @@
 import apiKey from '../apiKey';
 
 const articlesUrl = "https://newsapi.org/v2/top-headlines?";
-const sourcesUrl = "https://newsapi.org/v2/sources?";
+const esCountriesExtension = "country=mx&country=ve&country=co&country=ar&";
+// const sourcesUrl = "https://newsapi.org/v2/sources?";
 
-export const buildEndpoint = (baseUrl, language, interests) => {
-  let endpoint = [baseUrl];
+export const buildEndpoint = (language, interests) => {
+  let endpoint = [articlesUrl];
 
-  if (language) {
-    endpoint.push(`language=${language}&`)
+  endpoint.push(`language=${language}&`);
+
+  if (language === 'es') {
+    endpoint.push(esCountriesExtension);
   }
   
   if (interests) {
@@ -21,19 +24,26 @@ export const buildEndpoint = (baseUrl, language, interests) => {
   return endpoint.join('');
 }
 
-export const fetchTopArticles = async language => {
-  const response = await fetch(buildEndpoint(articlesUrl, language));
+export const fetchArticles = async (language, interests) => {
+  const response = await fetch(buildEndpoint(language, interests));
   const articleData = await response.json();
 
   return articleData.articles;
 }
 
-export const fetchSources = async (language, interests) => {
-  const response = await fetch(buildEndpoint(sourcesUrl, language, interests));
-  const sourcesData = await response.json();
+export const fetchCNNEsArticles = async () => {
+  const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=cnn-es&apiKey=${apiKey}`);
+  const articleData = await response.json();
 
-  return sourcesData.sources;
+  return articleData.articles;
 }
+
+// export const fetchSources = async (language, interests) => {
+//   const response = await fetch(buildEndpoint(sourcesUrl, language, interests));
+//   const sourcesData = await response.json();
+
+//   return sourcesData.sources;
+// }
 
 // export const fetchArticlesByInterest = async interests => {
 //   const response = await fetch(buildEndpoint(interests));
