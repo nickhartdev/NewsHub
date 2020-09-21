@@ -9,6 +9,7 @@ import './App.css';
 
 const App = () => {
   const [interests, modifyInterests] = useState([]);
+  const [readingList, modifyReadingList] = useState([]);
   const [t, i18n] = useTranslation();
   const englishCategories = [
     'business',
@@ -56,15 +57,19 @@ const App = () => {
     }
   }
 
+  const addToReadingList = article => {
+    modifyReadingList([...readingList, article]);
+  }
+
   return (
     <div className="App">
       <Suspense fallback={<div>Loading...</div>}>
         <Route path="/language-select">
-          <LanguageSelect changeLanguage={changeLanguage} />
+          <LanguageSelect changeLanguage={ changeLanguage } />
         </Route>
         <Route path="/interest-select">
           <InterestSelect 
-            toggleInterest={toggleInterest} 
+            toggleInterest={ toggleInterest } 
             interests={ englishCategories }
           />
         </Route>
