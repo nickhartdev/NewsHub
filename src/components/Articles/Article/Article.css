@@ -1,17 +1,18 @@
 article {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 70%;
   height: 300px;
   margin: 2em auto 5em auto;
   position: relative;
 }
 
-.title, .description, .author {
+.title {
   position: absolute;
   color: white;
   z-index: 3;
   margin: 1em;
+  max-width: 500px;
 }
 
 .title {
@@ -91,13 +92,14 @@ article {
   article {
     margin: 3em auto;
   }
+
   .title {
     font-size: 1.4em;
   }
 }
 
-@media screen and (min-width: 860px) {
-  .button-container {
-
+@media screen and (min-width: 900px) {
+  .title {
+    left: 3em;
   }
 }

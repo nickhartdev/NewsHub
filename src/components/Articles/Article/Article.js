@@ -19,7 +19,7 @@ const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => 
       </div>
       <p className="title">{articleToDisplay.title}</p>
       <p className="time-published">
-        {`Published on ${moment(articleToDisplay.publishedAt).format('MM/DD/YYYY')}`}
+        {`${t('published on')} ${moment(articleToDisplay.publishedAt).format('MM/DD/YYYY')}`}
       </p>
       <div className="button-container">
         <a className="article-link" href={`${articleToDisplay.url}`}>

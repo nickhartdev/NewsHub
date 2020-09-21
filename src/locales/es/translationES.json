@@ -9,10 +9,11 @@
     "technology": "La Tecnología"
   },
   "home header": "Tus Noticias",
-  "article link": "Enlace para ir al artículo",
+  "article link": "Ir al artículo",
   "add to list": "Agregar a la lista para leer más tarde",
   "remove from list": "Quitar de la lista",
   "go to reading list": "Ir a la lista de artículos",
   "back to home": "Volver a la página principal",
-  "choose different interests": "Elija un interés diferente"
+  "choose different interests": "Elija un interés diferente",
+  "published on": "Publicados el"
 }
