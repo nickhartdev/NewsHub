@@ -4,7 +4,12 @@ import Article from './Article/Article';
 
 const Articles = ({ articles }) => {
   const articlesToDisplay = articles.map(article => {
-    return <Article articleToDisplay={ article } />
+    return (
+      <Article
+        articleToDisplay={ article }
+        key={ articles.indexOf(article) }
+      />
+    ) 
   })
 
   return (

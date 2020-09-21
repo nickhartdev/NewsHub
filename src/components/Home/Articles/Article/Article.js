@@ -1,10 +1,12 @@
 import React from 'react';
 import '../../../../i18n';
 
-const Article = () => {
+const Article = ({ articleToDisplay }) => {
   return (
-    <p>Article</p>
-  )
+    <article>
+      <p>{articleToDisplay.title}</p>
+    </article>
+  );
 }
 
 export default Article;
