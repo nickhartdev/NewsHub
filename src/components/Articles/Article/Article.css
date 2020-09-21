@@ -1,10 +1,9 @@
 article {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   width: 80%;
   height: 300px;
-  margin: 2em auto 2em auto;
+  margin: 2em auto;
   position: relative;
 }
 
@@ -27,28 +26,37 @@ article {
 }
 
 .author {
-  top: 6em;
+  bottom: 0;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  margin-top: .5em;
+  width: 100%;
+  max-width: 550px;
+}
+
+.article-link, .reading-list-button {
+  background: black;
+  color: white;
+  border-radius: 3px;
+  height: 3em;
+  width: 49%;
+  max-width: 270px;
 }
 
 .article-link {
-  top: 9em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-decoration: none;
-  background: black;
-  color: white;
-  margin: .5em 0;
   font-size: .85em;
-  border-radius: 3px;
 }
 
-article > button {
-  margin: auto;
-  width: 100%;
-  max-width: 550px;
-  color: white;
-  background: black;
+.reading-list-button {
   border: none;
-  height: 2em;
-  border-radius: 3px;
 }
 
 .image-container {
@@ -82,5 +90,11 @@ article > button {
 @media screen and (max-width: 500px) {
   .title {
     font-size: 1.4em;
+  }
+}
+
+@media screen and (min-width: 860px) {
+  .button-container {
+
   }
 }

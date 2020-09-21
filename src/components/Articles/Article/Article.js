@@ -14,12 +14,18 @@ const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => 
     <article>
       <div className="image-container">
         <div className="image-overlay"></div>
-        <img src={`${articleToDisplay.urlToImage}`} alt=""/>
+        <img src={`${articleToDisplay.urlToImage}`} alt="" />
       </div>
       <p className="title">{articleToDisplay.title}</p>
       <p className="author">{articleToDisplay.author}</p>
-      <a className="article-link" href={`${articleToDisplay.url}`}>{t('article link')}</a>
-      <button type="button" onClick={callToggleReadingListStatus}>{t(`${toggleReadingListText}`)}</button>
+      <div className="button-container">
+        <a className="article-link" href={`${articleToDisplay.url}`}>
+          {t("article link")}
+        </a>
+        <button type="button" className="reading-list-button" onClick={callToggleReadingListStatus}>
+          {t(`${toggleReadingListText}`)}
+        </button>
+      </div>
     </article>
   );
 }
