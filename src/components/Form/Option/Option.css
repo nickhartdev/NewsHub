@@ -1,0 +1,8 @@
+.option {
+  font-size: 1.5em;
+  margin: .5rem 0;
+}
+
+.option:focus {
+  background: #fff;
+}

@@ -5,7 +5,7 @@ import '../../i18n';
 import { fetchArticles, fetchCNNEsArticles } from '../../ApiHelper/ApiHelper';
 import Articles from '../Articles/Articles';
 
-const Home = ({ interests, readingList, toggleReadingListStatus }) => {
+const Home = ({ interests, readingList, toggleReadingListStatus, clearInterests }) => {
   const [articles, setArticles] = useState([]);
   const {t, i18n} = useTranslation();
 
@@ -43,7 +43,7 @@ const Home = ({ interests, readingList, toggleReadingListStatus }) => {
   <button type="button">{t('go to reading list')}</button>
       </Link>
       <Link to='/interest-select'>
-        <button type="button">{t('choose different interests')}</button>
+        <button type="button" onClick={ clearInterests }>{t('choose different interests')}</button>
       </Link>
       <Articles 
         articles={ articles } 

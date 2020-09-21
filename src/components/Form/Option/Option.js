@@ -1,7 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import './Option.css';
 
-const Option = ({ optionToDisplay, functionToCall, options }) => {
+const Option = ({ optionToDisplay, functionToCall, options, selectedInterests, translateInterest }) => {
   const { t, i18n } = useTranslation();
 
   const createKey = optionToDisplay => {
@@ -13,7 +14,7 @@ const Option = ({ optionToDisplay, functionToCall, options }) => {
   }
 
   return (
-    <button type="button" onClick={functionToCall}>
+    <button onClick={functionToCall} className="option">
       {t(createKey(optionToDisplay))}
     </button>
   )
