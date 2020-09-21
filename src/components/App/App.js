@@ -57,8 +57,14 @@ const App = () => {
     }
   }
 
-  const addToReadingList = article => {
-    modifyReadingList([...readingList, article]);
+  const toggleReadingListStatus = article => {
+    if (!readingList.includes(article)) {
+      modifyReadingList([...readingList, article]);
+    } else {
+      modifyReadingList(readingList.filter(articleToKeep => {
+        return articleToKeep !== article;
+      }))
+    }
   }
 
   return (
@@ -74,7 +80,10 @@ const App = () => {
           />
         </Route>
         <Route path="/home">
-          <Home interests={ interests } />
+          <Home 
+            interests={ interests } 
+            toggleReadingListStatus={ toggleReadingListStatus }
+          />
         </Route>
         <Route path="/reading-list">
           <ReadingList />
