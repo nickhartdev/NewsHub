@@ -17,6 +17,19 @@ const Home = ({ interests }) => {
   //   const sourcesByInterest = await fetchSources(i18n.language, interests);
   // }
 
+  const shuffleArticles = articles => {
+    const shuffledArticles = [];
+
+    for (let i = articles.length; i > 0; i--) {
+      const randomIndex = Math.round(Math.random * articles.length);
+      const randomArticle = articles.splice(randomIndex, 1);
+
+      shuffledArticles.push(randomArticle[0]);
+    }
+
+    return shuffledArticles;
+  }
+
   const getArticles = async () => {
     const articlesData = await fetchArticles(i18n.language, interests);
     
@@ -25,7 +38,10 @@ const Home = ({ interests }) => {
       articlesData.concat(cnnEsArticlesData);
     }
 
-    setArticles(articlesData);
+    console.log(articlesData);
+    const shuffledArticles = shuffleArticles(articlesData);
+    console.log(shuffledArticles);
+    setArticles(shuffledArticles);
   }
 
   useEffect(() => {
