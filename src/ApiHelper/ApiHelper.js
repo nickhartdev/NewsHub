@@ -1,13 +1,20 @@
 import apiKey from '../apiKey';
 
-const baseUrl = "https://newsapi.org/v2/top-headlines?";
+const articlesUrl = "https://newsapi.org/v2/top-headlines?";
+const sourcesUrl = "https://newsapi.org/v2/sources?";
 
-export const buildEndpoint = interests => {
+export const buildEndpoint = (baseUrl, language, interests) => {
   let endpoint = [baseUrl];
+
+  if (language) {
+    endpoint.push(`language=${language}&`)
+  }
   
-  interests.forEach(interest => {
-    endpoint.push(`category=${interest}&`);
-  })
+  if (interests) {
+    interests.forEach(interest => {
+      endpoint.push(`category=${interest}&`);
+    })
+  }
 
   endpoint.push(`apiKey=${apiKey}`);
 
@@ -15,10 +22,17 @@ export const buildEndpoint = interests => {
 }
 
 export const fetchTopArticlesByLanguage = async language => {
-  const response = await fetch(`${baseUrl}language=${language}&apiKey=${apiKey}`);
+  const response = await fetch(buildEndpoint(articlesUrl, language));
   const articleData = await response.json();
 
   return articleData.articles;
+}
+
+export const fetchSourcesByLanguage = async language => {
+  const response = await fetch(buildEndpoint(sourcesUrl, language));
+  const sourcesData = await response.json();
+
+  return sourcesData.sources;
 }
 
 // export const fetchArticlesByInterest = async interests => {
