@@ -1,16 +1,15 @@
 import apiKey from '../apiKey';
 
 const articlesUrl = "https://newsapi.org/v2/top-headlines?";
-const esCountriesExtension = "country=mx&country=ve&country=co&country=ar&";
 // const sourcesUrl = "https://newsapi.org/v2/sources?";
 
 export const buildEndpoint = (language, interests) => {
   let endpoint = [articlesUrl];
 
-  endpoint.push(`language=${language}&`);
-
   if (language === 'es') {
-    endpoint.push(esCountriesExtension);
+    endpoint.push("country=mx&country=ve&country=co&country=ar&");
+  } else if (language === 'en') {
+    endpoint.push("country=us&")
   }
   
   if (interests) {

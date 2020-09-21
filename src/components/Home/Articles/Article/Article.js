@@ -4,7 +4,7 @@ import '../../../../i18n';
 const Article = ({ articleToDisplay }) => {
   return (
     <article>
-      <p>{articleToDisplay.title}</p>
+      <p className="article-title">{articleToDisplay.title}</p>
     </article>
   );
 }
