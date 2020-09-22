@@ -10,7 +10,7 @@ import './App.css';
 const App = () => {
   const [interests, modifyInterests] = useState([]);
   const [readingList, modifyReadingList] = useState([]);
-  const [i18n] = useTranslation();
+  const [t, i18n] = useTranslation();
   const englishCategories = [
     'business',
     'entertainment',
