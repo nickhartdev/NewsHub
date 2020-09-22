@@ -23,6 +23,9 @@ const ReadingList = ({ readingList, toggleReadingListStatus }) => {
       <Link to='/home'>
         <button type="button" className="home-button">{t('back to home')}</button>
       </Link>
+      {articlesToDisplay.length === 0 &&
+        <h1 id="saved-articles-placeholder">{t('saved articles placeholder')}</h1>
+      }
       { articlesToDisplay }
     </section>
   )
