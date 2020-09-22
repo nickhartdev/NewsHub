@@ -102,4 +102,48 @@ article {
   .title {
     left: 3em;
   }
+
+  .time-published {
+    left: 4.5em;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .title {
+    left: 6em;
+  }
+
+  .time-published {
+    left: 9em;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .title {
+    left: 9em;
+  }
+
+  .time-published {
+    left: 13.5em;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .title {
+    left: 11em;
+  }
+
+  .time-published {
+    left: 16.5em;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .title {
+    left: 13em;
+  }
+
+  .time-published {
+    left: 19.5em;
+  }
 }

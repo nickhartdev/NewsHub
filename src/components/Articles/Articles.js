@@ -17,7 +17,7 @@ const Articles = ({ articles, toggleReadingListStatus, readingList }) => {
   })
 
   return (
-    <section>
+    <section className="articles-container">
       { articlesToDisplay }
     </section>
   );
