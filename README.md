@@ -18,6 +18,6 @@ NewsHub is the start of an ongoing project - an application with the goal of mak
 
 ### App Demo
 
-[Main User Flow](./NewsHub.gif)
+![Main User Flow](./NewsHub.gif)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
