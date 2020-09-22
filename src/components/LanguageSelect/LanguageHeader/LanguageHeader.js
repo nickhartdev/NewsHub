@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import { CSSTransitionGroup } from 'react-transition-group';
 
 const LanguageHeader = () => {
   let [greeting, setGreeting] = useState();

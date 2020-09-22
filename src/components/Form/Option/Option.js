@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import './Option.css';
 
 const Option = ({ optionToDisplay, functionToCall, options, selectedInterests, translateInterest }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const createKey = optionToDisplay => {
     if (options.includes('business') || options.includes('los negocios')) {

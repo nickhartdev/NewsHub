@@ -94,7 +94,16 @@ article {
   }
 
   .title {
-    font-size: 1.4em;
+    font-size: 1.3em;
+  }
+
+  .time-published {
+    font-size: .9em;
+    top: 13em;
+  }
+
+  .reading-list-button, .article-link {
+    height: 50px;
   }
 }
 
