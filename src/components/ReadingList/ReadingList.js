@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import Article from '../Articles/Article/Article';
+import './ReadingList.css';
 
 const ReadingList = ({ readingList, toggleReadingListStatus }) => {
   const { t } = useTranslation();
@@ -20,7 +21,7 @@ const ReadingList = ({ readingList, toggleReadingListStatus }) => {
   return (
     <section>
       <Link to='/home'>
-        <button type="button">{t('back to home')}</button>
+        <button type="button" className="home-button">{t('back to home')}</button>
       </Link>
       { articlesToDisplay }
     </section>
