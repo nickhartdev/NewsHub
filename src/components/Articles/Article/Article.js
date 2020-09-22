@@ -1,5 +1,8 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
+import './Article.css';
+import moment from 'moment';
 
 const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => {
   const { t } = useTranslation();
@@ -11,14 +14,30 @@ const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => 
 
   return (
     <article>
-      <img src={`${articleToDisplay.urlToImage}`} />
+      <div className="image-container">
+        <div className="image-overlay"></div>
+        <img src={`${articleToDisplay.urlToImage}`} alt="" />
+      </div>
       <p className="title">{articleToDisplay.title}</p>
-      <p className="description">{articleToDisplay.description}</p>
-      <p className="author">{articleToDisplay.author}</p>
-      <a className="article-link" href={`${articleToDisplay.url}`}>{t('article link')}</a>
-      <button type="button" onClick={callToggleReadingListStatus}>{t(`${toggleReadingListText}`)}</button>
+      <p className="time-published">
+        {`${t('published on')} ${moment(articleToDisplay.publishedAt).format('MM/DD/YYYY')}`}
+      </p>
+      <div className="button-container">
+        <a className="article-link" href={`${articleToDisplay.url}`}>
+          {t("article link")}
+        </a>
+        <button type="button" className="reading-list-button" onClick={callToggleReadingListStatus}>
+          {t(`${toggleReadingListText}`)}
+        </button>
+      </div>
     </article>
   );
+}
+
+Article.propTypes = {
+  articleToDisplay: PropTypes.object,
+  readingList: PropTypes.array,
+  toggleReadingListStatus: PropTypes.func
 }
 
 export default Article;

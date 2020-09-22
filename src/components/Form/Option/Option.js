@@ -1,8 +1,10 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
+import './Option.css';
 
 const Option = ({ optionToDisplay, functionToCall, options }) => {
-  const { t, i18n } = useTranslation();
+  const { t } = useTranslation();
 
   const createKey = optionToDisplay => {
     if (options.includes('business') || options.includes('los negocios')) {
@@ -13,10 +15,16 @@ const Option = ({ optionToDisplay, functionToCall, options }) => {
   }
 
   return (
-    <button type="button" onClick={functionToCall}>
+    <button onClick={functionToCall} className="option">
       {t(createKey(optionToDisplay))}
     </button>
   )
+}
+
+Option.propTypes = {
+  optionToDisplay: PropTypes.object,
+  functionToCall: PropTypes.func,
+  options: PropTypes.array
 }
 
 export default Option;

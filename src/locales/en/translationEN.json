@@ -1,5 +1,5 @@
 {
-  "interestHeader": "Choose your interests",
+  "interestHeader": "Choose an interest",
   "interests": {
     "business": "Business",
     "entertainment": "Entertainment",
@@ -14,5 +14,7 @@
   "remove from list": "Remove from reading list",
   "go to reading list": "Go to reading list",
   "back to home": "Back to home",
-  "choose different interests": "Choose different interests"
+  "choose different interests": "Choose a different interest",
+  "published on": "Published on",
+  "saved articles placeholder": "Your saved articles will appear here"
 }

@@ -1,0 +1,15 @@
+.option {
+  font-size: 1em;
+  margin: .5rem 0;
+  padding: 1em;
+  background: black;
+  color: white;
+  border: none;
+  border-radius: 3px;
+}
+
+.option:focus {
+  background: #fff;
+  color: black;
+  border: 1px solid black;
+}

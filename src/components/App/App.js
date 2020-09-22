@@ -28,12 +28,17 @@ const App = () => {
     const interest = translateInterest(e.target.innerText.toLowerCase());
     
     if (interests.includes(interest)) {
+
       modifyInterests(interests.filter(interestToKeep => {
         return interestToKeep !== interest;
       }))
     } else if (!interests.includes(interest)) {
       modifyInterests([...interests, interest]);
     }
+  }
+
+  const clearInterests = e => {
+    modifyInterests([]);
   }
 
   const translateInterest = interest => {
@@ -72,13 +77,15 @@ const App = () => {
   return (
     <div className="App">
       <Suspense fallback={<div>Loading...</div>}>
-        <Route path="/language-select">
+        <Route exact path="/">
           <LanguageSelect changeLanguage={ changeLanguage } />
         </Route>
         <Route path="/interest-select">
           <InterestSelect 
             toggleInterest={ toggleInterest } 
             interests={ englishCategories }
+            selectedInterests={ interests }
+            translateInterest={ translateInterest }
           />
         </Route>
         <Route path="/home">
@@ -86,6 +93,7 @@ const App = () => {
             interests={ interests }
             readingList={ readingList }
             toggleReadingListStatus={ toggleReadingListStatus }
+            clearInterests={ clearInterests }
           />
         </Route>
         <Route path="/reading-list">

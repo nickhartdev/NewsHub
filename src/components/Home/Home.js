@@ -4,8 +4,10 @@ import { useTranslation } from 'react-i18next';
 import '../../i18n';
 import { fetchArticles, fetchCNNEsArticles } from '../../ApiHelper/ApiHelper';
 import Articles from '../Articles/Articles';
+import PropTypes from 'prop-types';
+import './Home.css';
 
-const Home = ({ interests, readingList, toggleReadingListStatus }) => {
+const Home = ({ interests, readingList, toggleReadingListStatus, clearInterests }) => {
   const [articles, setArticles] = useState([]);
   const {t, i18n} = useTranslation();
 
@@ -38,20 +40,31 @@ const Home = ({ interests, readingList, toggleReadingListStatus }) => {
 
   return (
     <main>
-      <h1>{t('home header')}</h1>
-      <Link to='/reading-list'>
-  <button type="button">{t('go to reading list')}</button>
-      </Link>
-      <Link to='/interest-select'>
-        <button type="button">{t('choose different interests')}</button>
-      </Link>
-      <Articles 
-        articles={ articles } 
-        readingList={ readingList }
-        toggleReadingListStatus={ toggleReadingListStatus }
+      <h1>{t("home header")}</h1>
+      <div className="top-button-container">
+        <Link to="/reading-list">
+          <button type="button" className="reading-list-button-top">{t("go to reading list")}</button>
+        </Link>
+        <Link to="/interest-select">
+          <button type="button" className="interest-select-button" onClick={clearInterests}>
+            {t("choose different interests")}
+          </button>
+        </Link>
+      </div>
+      <Articles
+        articles={articles}
+        readingList={readingList}
+        toggleReadingListStatus={toggleReadingListStatus}
       />
     </main>
   );
+}
+
+Home.propTypes = {
+  interests: PropTypes.array,
+  readingList: PropTypes.array,
+  toggleReadingListStatus: PropTypes.func,
+  clearInterests: PropTypes.func
 }
 
 export default Home;

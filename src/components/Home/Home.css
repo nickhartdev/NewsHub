@@ -1,0 +1,18 @@
+.top-button-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.reading-list-button-top, .interest-select-button {
+  background: black;
+  color: white;
+  width: 70%;
+  max-width: 550px;
+  border: none;
+  border-radius: 3px;
+  height: 3em;
+}
+
+.interest-select-button {
+  margin-top: 1em;
+}
