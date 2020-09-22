@@ -52,9 +52,11 @@ describe('Home', () => {
 
   it('should allow you to save and view an article in the reading list', async () => {
     const addToReadingListButton = await waitFor(() => screen.getAllByText('Add to reading list'));
-    fireEvent.click(addToReadingListButton[0]);
     const readingListButton = screen.getByText('Go to reading list');
+
+    fireEvent.click(addToReadingListButton[0]);
     fireEvent.click(readingListButton)
+    
     const title1 = await waitFor(() => screen.getByText('Test title 1'));
 
     expect(title1).toBeInTheDocument();

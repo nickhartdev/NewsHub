@@ -1,6 +1,7 @@
 import React from 'react';
 import Option from './Option/Option';
 import SubmitButton from './SubmitButton/SubmitButton';
+import PropTypes from 'prop-types';
 import './Form.css';
 
 const Form = ({ options, functionToCall, selectedInterests, translateInterest }) => {
@@ -23,6 +24,13 @@ const Form = ({ options, functionToCall, selectedInterests, translateInterest })
       <SubmitButton options={ options }/>
     </section>
   );
+}
+
+Form.propTypes = {
+  options: PropTypes.array,
+  functionToCall: PropTypes.func,
+  selectedInterests: PropTypes.array,
+  translateInterest: PropTypes.func
 }
 
 export default Form;

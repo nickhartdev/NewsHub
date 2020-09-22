@@ -1,5 +1,6 @@
 import React from "react";
 import { useTranslation } from "react-i18next";
+import PropTypes from 'prop-types';
 import Form from "../Form/Form";
 import '../../i18n';
 
@@ -16,5 +17,10 @@ const InterestSelect = ({ toggleInterest, interests }) => {
     </main>
   );
 };
+
+InterestSelect.propTypes = {
+  toggleInterest: PropTypes.func,
+  interests: PropTypes.array
+}
 
 export default InterestSelect;

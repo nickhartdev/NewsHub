@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import '../../i18n';
 import { fetchArticles, fetchCNNEsArticles } from '../../ApiHelper/ApiHelper';
 import Articles from '../Articles/Articles';
+import PropTypes from 'prop-types';
 import './Home.css';
 
 const Home = ({ interests, readingList, toggleReadingListStatus, clearInterests }) => {
@@ -57,6 +58,13 @@ const Home = ({ interests, readingList, toggleReadingListStatus, clearInterests 
       />
     </main>
   );
+}
+
+Home.propTypes = {
+  interests: PropTypes.array,
+  readingList: PropTypes.array,
+  toggleReadingListStatus: PropTypes.func,
+  clearInterests: PropTypes.func
 }
 
 export default Home;

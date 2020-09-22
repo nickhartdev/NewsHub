@@ -1,5 +1,6 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 import './Article.css';
 import moment from 'moment';
 
@@ -31,6 +32,12 @@ const Article = ({ articleToDisplay, readingList, toggleReadingListStatus }) => 
       </div>
     </article>
   );
+}
+
+Article.propTypes = {
+  articleToDisplay: PropTypes.object,
+  readingList: PropTypes.array,
+  toggleReadingListStatus: PropTypes.func
 }
 
 export default Article;

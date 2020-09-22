@@ -77,7 +77,7 @@ const App = () => {
   return (
     <div className="App">
       <Suspense fallback={<div>Loading...</div>}>
-        <Route path="/language-select">
+        <Route exact path="/">
           <LanguageSelect changeLanguage={ changeLanguage } />
         </Route>
         <Route path="/interest-select">

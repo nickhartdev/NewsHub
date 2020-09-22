@@ -1,5 +1,6 @@
 import React from 'react';
 import '../../i18n';
+import PropTypes from 'prop-types';
 import Article from './Article/Article';
 
 const Articles = ({ articles, toggleReadingListStatus, readingList }) => {
@@ -21,6 +22,12 @@ const Articles = ({ articles, toggleReadingListStatus, readingList }) => {
       { articlesToDisplay }
     </section>
   );
+}
+
+Articles.propTypes = {
+  articles: PropTypes.array,
+  toggleReadingListStatus: PropTypes.func,
+  readingList: PropTypes.array
 }
 
 export default Articles;

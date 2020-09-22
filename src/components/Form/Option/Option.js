@@ -1,8 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 import './Option.css';
 
-const Option = ({ optionToDisplay, functionToCall, options, selectedInterests, translateInterest }) => {
+const Option = ({ optionToDisplay, functionToCall, options }) => {
   const { t } = useTranslation();
 
   const createKey = optionToDisplay => {
@@ -18,6 +19,12 @@ const Option = ({ optionToDisplay, functionToCall, options, selectedInterests, t
       {t(createKey(optionToDisplay))}
     </button>
   )
+}
+
+Option.propTypes = {
+  optionToDisplay: PropTypes.object,
+  functionToCall: PropTypes.func,
+  options: PropTypes.array
 }
 
 export default Option;
