@@ -2,6 +2,9 @@
   "name": "mod-3-final",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "14.x"
+  }
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^11.0.4",
