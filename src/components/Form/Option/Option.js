@@ -22,7 +22,7 @@ const Option = ({ optionToDisplay, functionToCall, options }) => {
 }
 
 Option.propTypes = {
-  optionToDisplay: PropTypes.object,
+  optionToDisplay: PropTypes.string,
   functionToCall: PropTypes.func,
   options: PropTypes.array
 }

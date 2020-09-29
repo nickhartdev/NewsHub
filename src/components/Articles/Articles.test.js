@@ -6,14 +6,24 @@ import Articles from './Articles';
 describe('Articles', () => {
   it('should render each article that is passed in', () => {
     const articles = [
-      {title: 'Article 1'},
-      {title: 'Article 2'},
-      {title: 'Article 3'}
-    ]
+      {
+        title: "Article 1",
+        urlToImage: "test url",
+
+      },
+      {
+        title: "Article 2",
+        urlToImage: "test url",
+      },
+      { 
+        title: "Article 3", 
+        urlToImage: 'test url'
+      }
+    ];
 
     render(
       <Router>
-        <Articles articles={ articles } />
+        <Articles articles={ articles } readingList={ [] } />
       </Router>
     )
 

@@ -6,8 +6,8 @@ import '@testing-library/react';
 
 describe('ApiHelper', () => {
   it('should generate a correct URL when given an array of interests', () => {
-    expect(buildEndpoint(["business", "science"])).toBe(
-      `https://newsapi.org/v2/top-headlines?category=business&category=science&apiKey=${apiKey}`
+    expect(buildEndpoint('en', ["business", "science"])).toBe(
+      `https://newsapi.org/v2/top-headlines?country=us&category=business&category=science&apiKey=${apiKey}`
     );
   })
 })
