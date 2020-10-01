@@ -26,7 +26,7 @@ const Articles = ({ articles, toggleReadingListStatus, readingList }) => {
       {articlesToDisplay.length === 0 &&
         <p>I'm sorry, there's been an error fetching your articles.</p>
       }
-      articlesToDisplay 
+      { articlesToDisplay }
     </section>
   );
 }
