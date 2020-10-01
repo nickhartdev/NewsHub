@@ -4,7 +4,6 @@ const articlesUrl = "https://newsapi.org/v2/top-headlines?";
 // const sourcesUrl = "https://newsapi.org/v2/sources?";
 
 export const buildEndpoint = (language, interests) => {
-  console.log(process.env.API_KEY)
   let endpoint = [articlesUrl];
 
   if (language === 'es') {
