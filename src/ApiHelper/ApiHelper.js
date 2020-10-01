@@ -1,9 +1,10 @@
-import apiKey from '../apiKey';
+require('dotenv').config();
 
 const articlesUrl = "https://newsapi.org/v2/top-headlines?";
 // const sourcesUrl = "https://newsapi.org/v2/sources?";
 
 export const buildEndpoint = (language, interests) => {
+  console.log(process.env.API_KEY)
   let endpoint = [articlesUrl];
 
   if (language === 'es') {
@@ -18,7 +19,7 @@ export const buildEndpoint = (language, interests) => {
     })
   }
 
-  endpoint.push(`apiKey=${apiKey}`);
+  endpoint.push(`apiKey=${process.env.REACT_APP_API_KEY}`);
 
   return endpoint.join('');
 }
@@ -31,7 +32,9 @@ export const fetchArticles = async (language, interests) => {
 }
 
 export const fetchCNNEsArticles = async () => {
-  const response = await fetch(`https://newsapi.org/v2/top-headlines?sources=cnn-es&apiKey=${apiKey}`);
+  const response = await fetch(
+    `https://newsapi.org/v2/top-headlines?sources=cnn-es&apiKey=${process.env.REACT_APP_API_KEY}`
+  );
   const articleData = await response.json();
 
   return articleData.articles;
