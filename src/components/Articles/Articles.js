@@ -4,22 +4,29 @@ import PropTypes from 'prop-types';
 import Article from './Article/Article';
 
 const Articles = ({ articles, toggleReadingListStatus, readingList }) => {
-  const articlesToDisplay = articles.map(article => {
-    if (article.urlToImage) {
-      return (
-        <Article
-          articleToDisplay={ article }
-          key={ articles.indexOf(article) }
-          readingList={ readingList }
-          toggleReadingListStatus={ toggleReadingListStatus }
-        />
-      )
-    }
-  })
+  let articlesToDisplay = [];
+
+  if (articles.length > 0) {
+    articlesToDisplay = articles.map(article => {
+      if (article.urlToImage) {
+        return (
+          <Article
+            articleToDisplay={ article }
+            key={ articles.indexOf(article) }
+            readingList={ readingList }
+            toggleReadingListStatus={ toggleReadingListStatus }
+          />
+        )
+      }
+    })
+  }
 
   return (
     <section className="articles-container">
-      { articlesToDisplay }
+      {articlesToDisplay.length === 0 &&
+        <p>I'm sorry, there's been an error fetching your articles.</p>
+      }
+      articlesToDisplay 
     </section>
   );
 }

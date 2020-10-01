@@ -25,13 +25,16 @@ const Home = ({ interests, readingList, toggleReadingListStatus, clearInterests 
 
   const getArticles = async () => {
     const articlesData = await fetchArticles(i18n.language, interests);
-    if (i18n.language === 'es') {
-      const cnnEsArticlesData = await fetchCNNEsArticles();
-      articlesData.concat(cnnEsArticlesData);
+    
+    if (articlesData) {
+      if (i18n.language === 'es') {
+        const cnnEsArticlesData = await fetchCNNEsArticles();
+        articlesData.concat(cnnEsArticlesData);
+      }
+      const shuffledArticles = shuffleArticles(articlesData);
+  
+      setArticles(shuffledArticles);
     }
-    const shuffledArticles = shuffleArticles(articlesData);
-
-    setArticles(shuffledArticles);
   }
 
   useEffect(() => {
