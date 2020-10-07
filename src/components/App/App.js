@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Route } from 'react-router-dom';
 import Header from '../Header/Header';
@@ -41,6 +41,11 @@ const App = () => {
   const clearInterests = e => {
     modifyInterests([]);
   }
+
+  useEffect(() => {
+    const setTitle = () => document.title = 'NewsHub';
+    setTitle();
+  })
 
   const translateInterest = interest => {
     if (englishCategories.includes(interest)) {
