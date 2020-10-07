@@ -1,6 +1,7 @@
 import React, { useState, Suspense } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Route } from 'react-router-dom';
+import Header from '../Header/Header';
 import LanguageSelect from '../LanguageSelect/LanguageSelect';
 import InterestSelect from '../InterestSelect/InterestSelect';
 import ReadingList from '../ReadingList/ReadingList';
@@ -77,6 +78,7 @@ const App = () => {
   return (
     <div className="App">
       <Suspense fallback={<div>Loading...</div>}>
+        <Header />
         <Route exact path="/">
           <LanguageSelect changeLanguage={ changeLanguage } />
         </Route>
