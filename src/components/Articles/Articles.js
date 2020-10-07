@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import '../../i18n';
 import PropTypes from 'prop-types';
 import Article from './Article/Article';
@@ -22,12 +22,11 @@ const Articles = ({ articles, toggleReadingListStatus, readingList }) => {
   }
 
   return (
-    <section className="articles-container">
-      {articlesToDisplay.length === 0 &&
-        <p>I'm sorry, there's been an error fetching your articles.</p>
-      }
-      { articlesToDisplay }
-    </section>
+    <Suspense fallback={<div>Loading...</div>}>
+      <section className="articles-container">
+        { articlesToDisplay }
+      </section>
+    </Suspense>
   );
 }
 
